@@ -1,17 +1,20 @@
+package ru.netology.mess;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import ru.netology.Country;
+import ru.netology.Location;
+import ru.netology.geo.GeoServiceImpl;
+import ru.netology.local.LocalizationServiceImpl;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import static org.mockito.Mockito.when;
 
-
-public class TestClass {
-
+public class MessageSenderImplTest {
     @Test
     public void rusMessageSenderImplTest() {
         GeoServiceImpl geoService = Mockito.mock(GeoServiceImpl.class);
@@ -49,36 +52,4 @@ public class TestClass {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
-    public void locationByIpTest() {
-        GeoServiceImpl geoService = new GeoServiceImpl();
-        Location locationGeoService = geoService.byIp("127.0.0.1");
-        Assertions.assertNull(locationGeoService.getCity());
-
-    }
-
-    @Test
-    void stringLocaleRusTest() {
-        LocalizationServiceImpl localizationService = new LocalizationServiceImpl();
-        String expected = "Добро пожаловать";
-        Assertions.assertEquals(expected, localizationService.locale(Country.RUSSIA));
-
-    }
-
-    @Test
-    void stringLocaleEngTest() {
-        LocalizationServiceImpl localizationService = new LocalizationServiceImpl();
-        String expected = "Welcome";
-        Assertions.assertEquals(expected, localizationService.locale(Country.USA));
-    }
-
-    @Test
-    public void getCountryTest(){
-        Location location=Mockito.mock(Location.class);
-        when(location.getCountry())
-                .thenReturn(Country.USA);
-
-       Mockito.atLeastOnce();
-
-    }
 }

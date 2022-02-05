@@ -1,3 +1,5 @@
+package ru.netology;
+
 public class Location {
     private final String city;
 

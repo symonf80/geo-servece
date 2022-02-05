@@ -1,5 +1,9 @@
+package ru.netology.geo;
 
-public class GeoServiceImpl implements GeoService{
+import ru.netology.Country;
+import ru.netology.Location;
+
+public class GeoServiceImpl implements GeoService {
 
     public static final String LOCALHOST = "127.0.0.1";
     public static final String MOSCOW_IP = "172.0.32.11";

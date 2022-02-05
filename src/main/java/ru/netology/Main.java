@@ -1,3 +1,12 @@
+package ru.netology;
+
+import ru.netology.geo.GeoService;
+import ru.netology.geo.GeoServiceImpl;
+import ru.netology.local.LocalizationService;
+import ru.netology.local.LocalizationServiceImpl;
+import ru.netology.mess.MessageSender;
+import ru.netology.mess.MessageSenderImpl;
+
 import java.util.HashMap;
 import java.util.Map;
 public class Main {
